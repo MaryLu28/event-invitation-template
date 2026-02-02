@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 
-import CeremonyAndParty from "./components/ceremony-and-party";
+import EventInfo from "./components/event-info";
 import Countdown from "./components/countdown";
 import DressCode from "./components/dress-code";
 import Gift from "./components/gift";
@@ -31,7 +31,7 @@ export default function Home() {
     <MainContainer>
       <Header onScroll={onScroll} />
       <Countdown ref={ref} />
-      <CeremonyAndParty />
+      <EventInfo />
       <DressCode />
       <RSVP />
       <Music />

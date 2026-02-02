@@ -54,7 +54,7 @@ const Text = styled.p`
   text-align: center;
 `;
 
-export default function CeremonyAndParty() {
+export default function EventInfo() {
   return (
     <Container $backgroundColor={colors.secondary100} $padding="20px 20px 60px">
       <Content>
