@@ -86,7 +86,7 @@ export const ButtonLink = styled.a<{
   ${(props) =>
     props.theme === "tertiaryLight" &&
     `color: ${colors.tertiary100};
-    background-color: ${colors.tertiary600};`}
+    background-color: ${colors.tertiary500};`}
   ${(props) =>
     props.theme === "tertiaryDark" &&
     `color: ${colors.tertiary700};
@@ -117,7 +117,7 @@ export const Button = styled.button<{
   ${(props) =>
     props.theme === "tertiaryLight" &&
     `color: ${colors.tertiary100};
-    background-color: ${colors.tertiary700};`}
+    background-color: ${colors.tertiary500};`}
   ${(props) =>
     props.theme === "tertiaryDark" &&
     `color: ${colors.tertiary700};

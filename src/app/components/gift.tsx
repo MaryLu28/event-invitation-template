@@ -28,7 +28,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 16px;
   text-align: center;
-  color: ${colors.primary600};
+  color: ${colors.tertiary600};
   margin-bottom: 20px;
 `;
 
@@ -51,12 +51,13 @@ const BankInfo = styled.div`
 const BankTitle = styled(Title)`
   font-size: 18px;
   margin-bottom: 10px;
+  color: ${colors.tertiary700};
 `;
 
 const BankText = styled.p`
   font-size: 14px;
   text-align: center;
-  color: ${colors.primary600};
+  color: ${colors.tertiary600};
 `;
 
 export default function Gift() {
@@ -66,11 +67,13 @@ export default function Gift() {
   const handleShow = () => setShow(true);
 
   return (
-    <Container $backgroundColor={colors.tertiary700} $padding="40px 20px 60px">
+    <Container $backgroundColor={colors.tertiary100} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconGift.src} alt="Icono Regalo" />
         <Text>{data.gift.message}</Text>
-        <Button onClick={handleShow}>Ver detalles</Button>
+        <Button onClick={handleShow} theme="tertiaryLight">
+          Ver detalles
+        </Button>
         <Modal
           open={show}
           onClose={handleClose}
