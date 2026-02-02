@@ -62,11 +62,23 @@ const OverlappingContainer = styled.div`
 
 const CenteredText = styled.span`
   text-align: center;
-  font-size: 300px;
+  font-size: 150px;
   color: ${colors.secondary600};
   font-weight: 900;
   opacity: 0.7;
   line-height: 1;
+
+  @media (${mobile}) {
+    font-size: 200px;
+  }
+
+  @media (${tablet}) {
+    font-size: 250px;
+  }
+
+  @media (${desktop}) {
+    font-size: 300px;
+  }
 `;
 
 const OverlapText = styled.span`
@@ -75,9 +87,21 @@ const OverlapText = styled.span`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  font-size: 150px;
+  font-size: 80px;
   font-family: ${eyesomeScriptFont.style.fontFamily};
   color: ${colors.primary600};
+
+  @media (${mobile}) {
+    font-size: 100px;
+  }
+
+  @media (${tablet}) {
+    font-size: 120px;
+  }
+
+  @media (${desktop}) {
+    font-size: 150px;
+  }
 `;
 
 const ScrollDownArrow = styled.button`
