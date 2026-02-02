@@ -1,3 +1,4 @@
+import Markdown from "markdown-to-jsx";
 import styled from "styled-components";
 
 import { ButtonLink, Container, Title } from "../shared/common-components";
@@ -6,7 +7,6 @@ import { colors } from "../shared/colors";
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import data from "../data.json";
-import Markdown from "markdown-to-jsx";
 
 const Content = styled.div`
   display: flex;

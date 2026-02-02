@@ -1,3 +1,4 @@
+import Markdown from "markdown-to-jsx";
 import styled from "styled-components";
 
 import { colors } from "../shared/colors";
@@ -5,7 +6,6 @@ import { ButtonLink, Container, Title } from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
 
 import data from "../data.json";
-import Markdown from "markdown-to-jsx";
 
 const Content = styled.div`
   display: flex;
