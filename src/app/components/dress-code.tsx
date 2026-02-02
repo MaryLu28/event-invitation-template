@@ -23,6 +23,7 @@ const Content = styled.div`
   max-width: 600px;
   flex-direction: column;
   align-items: center;
+  color: ${colors.tertiary100};
 `;
 
 const Icon = styled.img`
@@ -33,7 +34,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 20px;
   text-align: center;
-  color: ${colors.primary600};
+
   margin-bottom: 20px;
 `;
 
@@ -41,7 +42,6 @@ const Tips = styled.p`
   font-size: 14px;
   margin-bottom: 6px;
   text-align: center;
-  color: ${colors.primary600};
 `;
 
 const ModalContainer = styled.div`
@@ -101,7 +101,7 @@ const ModalText = styled.p`
   font-size: 12px;
   margin-bottom: 10px;
   text-align: center;
-  color: ${colors.secondary700};
+  color: ${colors.tertiary700};
   font-weight: 500;
 
   @media (${mobile}) {
@@ -124,16 +124,18 @@ export default function DressCode() {
     <Container $backgroundColor={colors.tertiary700} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconDressCode.src} alt="Icono Dress Code" />
-        <Title>Código de Vestimenta</Title>
-        <Text>Vestimenta formal, elegante</Text>
-        <Tips>
-          Recuerda que para esa fecha estaremos iniciando el invierno.
-        </Tips>
-        <Tips>
-          Puedes traer unos zapatos extras para estar más cómodo/a en la pista
-          de baile.
-        </Tips>
-        <Button onClick={handleShow}>Más detalles</Button>
+        <Title color={colors.tertiary200}>Código de Vestimenta</Title>
+        <Text>{data.dressCode.description}</Text>
+        {data.dressCode.tips && (
+          <>
+            {data.dressCode.tips.map((tip, index) => (
+              <Tips key={index}>{tip}</Tips>
+            ))}
+          </>
+        )}
+        <Button theme="tertiaryDark" onClick={handleShow}>
+          Más detalles
+        </Button>
         <Modal
           open={show}
           onClose={handleClose}
@@ -148,24 +150,25 @@ export default function DressCode() {
             <ModalWrapper>
               <ModalContent>
                 <ModalColumn>
-                  <ModalText>Traje</ModalText>
-                  <ModalText>Corbata / Moño</ModalText>
-                  <ModalText>Zapatos Formales</ModalText>
+                  {data.dressCode.menDetails.map((detail, index) => (
+                    <ModalText key={index}>{detail}</ModalText>
+                  ))}
                 </ModalColumn>
                 <ModalColumn>
-                  <ModalText>Vestido largo</ModalText>
-                  <ModalText>No blanco, no nude, no crema</ModalText>
-                  <ModalText>Tacones, clutch y accesorios de noche</ModalText>
+                  {data.dressCode.womenDetails.map((detail, index) => (
+                    <ModalText key={index}>{detail}</ModalText>
+                  ))}
                 </ModalColumn>
               </ModalContent>
             </ModalWrapper>
-            <ModalText>
-              Recuerda que puedes traer unos zapatos cómodos extras para
-              cambiarte durante la fiesta
-            </ModalText>
-            <ButtonLink target="_blank" href={data.dressCodeExamples}>
-              Ver ejemplos
-            </ButtonLink>
+            {data.dressCode.ModalFooterNote && (
+              <ModalText>{data.dressCode.ModalFooterNote}</ModalText>
+            )}
+            {data.dressCode.examplesLink && (
+              <ButtonLink target="_blank" href={data.dressCode.examplesLink}>
+                Ver ejemplos
+              </ButtonLink>
+            )}
           </ModalContainer>
         </Modal>
       </Content>

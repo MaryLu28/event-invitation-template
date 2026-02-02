@@ -69,7 +69,7 @@ input[type="reset"] {
 }
 
 .customOverlay {
-  background-color: rgba(82, 74, 63, 0.8);
+  background-color: rgba(10, 17, 29, 0.8);
 }
 
 .customModal {
@@ -77,6 +77,7 @@ input[type="reset"] {
   border-radius: 10px;
   box-shadow: none;
   padding: 35px 25px 25px !important;
+  background-color: #f0f5ff;
 }
 
 .customModalLarge {
@@ -91,5 +92,5 @@ input[type="reset"] {
 .customModal svg {
   width: 24px;
   height: 24px;
-  fill: #524a3f;
+  fill: #0a111d;
 }
