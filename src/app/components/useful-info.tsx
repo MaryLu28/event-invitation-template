@@ -55,14 +55,14 @@ const InfoList = styled.ul`
 
 const InfoItem = styled.li`
   padding-left: 30px;
-  color: ${colors.primary600};
+  color: ${colors.primary700};
   font-size: 14px;
   margin-bottom: 15px;
   min-width: calc(50% - 10px);
   margin-right: 10px;
 
   &::marker {
-    color: ${colors.secondary700};
+    color: ${colors.primary700};
   }
 `;
 
@@ -79,7 +79,7 @@ export default function UsefulInfo() {
   const handleShow = () => setShow(true);
 
   return (
-    <Container $backgroundColor={colors.tertiary200}>
+    <Container $backgroundColor={colors.primary200}>
       <Content>
         <Title>{data.usefulInfo.title}</Title>
         <Text>
