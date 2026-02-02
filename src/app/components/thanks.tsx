@@ -7,6 +7,9 @@ import { desktop, tablet } from "../shared/breakpoints";
 
 import iconHeart from "../../../public/img/heart-icon.svg";
 
+import data from "../data.json";
+import Markdown from "markdown-to-jsx";
+
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",
 });
@@ -35,7 +38,7 @@ const Text = styled.p`
   font-family: ${eyesomeScriptFont.style.fontFamily};
   font-size: 24px;
   text-align: center;
-  color: ${colors.primary600};
+  color: ${colors.secondary100};
 
   @media (${tablet}) {
     font-size: 32px;
@@ -44,10 +47,12 @@ const Text = styled.p`
 
 export default function Thanks() {
   return (
-    <Container $backgroundColor={colors.tertiary300} $padding="40px 20px 60px">
+    <Container $backgroundColor={colors.secondary700} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconHeart.src} alt="Icono corazón" />
-        <Text>¡Gracias por acompañarnos en este momento tan importante!</Text>
+        <Text>
+          <Markdown>{data.footerText}</Markdown>
+        </Text>
       </Content>
     </Container>
   );
