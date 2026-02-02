@@ -1,5 +1,9 @@
 import { forwardRef, useEffect, useState } from "react";
-import { CountdownCircleTimer, Props } from "react-countdown-circle-timer";
+import {
+  ColorFormat,
+  CountdownCircleTimer,
+  Props,
+} from "react-countdown-circle-timer";
 import styled from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -57,7 +61,7 @@ const Icon = styled.img`
 `;
 
 const Text = styled.p`
-  color: ${colors.primary600};
+  color: ${colors.primary100};
   font-size: 18px;
   text-align: center;
 
@@ -95,8 +99,8 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
     isPlaying: true,
     size: 65,
     strokeWidth: 2,
-    colors: "#CAA971",
-    trailColor: "#E1D0B6",
+    colors: colors.primary100 as ColorFormat,
+    trailColor: colors.primary700 as ColorFormat,
     rotation: "counterclockwise",
   });
   const [minutesText, setMinutesText] = useState("");
@@ -114,7 +118,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   }, [isMobileXl, isDesktop]);
 
   // use UNIX timestamp in seconds
-  const endTime = Math.floor(new Date(data.date).getTime() / 1000);
+  const endTime = Math.floor(new Date(data.countdown.date).getTime() / 1000);
 
   const remainingTime = endTime - startTime;
 
@@ -123,7 +127,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   const daysDuration = days * daySeconds;
 
   return (
-    <Container $backgroundColor={colors.tertiary300} ref={ref}>
+    <Container $backgroundColor={colors.primary500} ref={ref}>
       <Content>
         <CountdownCircleTimer
           {...timerProps}
@@ -183,9 +187,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
         </CountdownCircleTimer>
       </Content>
       <Icon src={heartIcon.src} alt="icono corazón" />
-      <Text>
-        Queremos celebrar junto a ti este momento tan especial para nosotros...
-      </Text>
+      {data.countdown.text && <Text>{data.countdown.text}</Text>}
     </Container>
   );
 });
