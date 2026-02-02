@@ -22,7 +22,7 @@ const Content = styled.div`
 const Text = styled.p`
   font-size: 16px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   margin-bottom: 20px;
 `;
 
@@ -55,14 +55,14 @@ const InfoList = styled.ul`
 
 const InfoItem = styled.li`
   padding-left: 30px;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   font-size: 14px;
   margin-bottom: 15px;
   min-width: calc(50% - 10px);
   margin-right: 10px;
 
   &::marker {
-    color: ${colors.yellow1};
+    color: ${colors.secondary700};
   }
 `;
 
@@ -79,7 +79,7 @@ export default function UsefulInfo() {
   const handleShow = () => setShow(true);
 
   return (
-    <Container $backgroundColor={colors.brightYellow8}>
+    <Container $backgroundColor={colors.tertiary200}>
       <Content>
         <Title>Información Útil</Title>
         <Text>

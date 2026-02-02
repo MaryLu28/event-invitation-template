@@ -57,7 +57,7 @@ const Icon = styled.img`
 `;
 
 const Text = styled.p`
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   font-size: 18px;
   text-align: center;
 
@@ -123,7 +123,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   const daysDuration = days * daySeconds;
 
   return (
-    <Container $backgroundColor={colors.brightYellow7} ref={ref}>
+    <Container $backgroundColor={colors.tertiary300} ref={ref}>
       <Content>
         <CountdownCircleTimer
           {...timerProps}
@@ -162,7 +162,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
             <span style={{ color }}>
               {renderTime(
                 minutesText,
-                getTimeMinutes(hourSeconds - elapsedTime)
+                getTimeMinutes(hourSeconds - elapsedTime),
               )}
             </span>
           )}

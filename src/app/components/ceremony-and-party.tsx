@@ -42,7 +42,7 @@ const DateInfo = styled.div`
 const DateText = styled.p`
   font-size: 18px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   font-weight: 500;
 `;
 
@@ -50,7 +50,7 @@ const Text = styled.p`
   font-size: 16px;
   margin-bottom: 6px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
 `;
 
 export default function CeremonyAndParty() {
@@ -75,10 +75,7 @@ export default function CeremonyAndParty() {
   });
 
   return (
-    <Container
-      $backgroundColor={colors.brightYellow8}
-      $padding="20px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary200} $padding="20px 20px 60px">
       <Content>
         <Info>
           <Icon src={churchIcon.src} alt="icono iglesia" />

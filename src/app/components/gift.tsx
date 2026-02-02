@@ -28,7 +28,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 16px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   margin-bottom: 20px;
 `;
 
@@ -56,7 +56,7 @@ const BankTitle = styled(Title)`
 const BankText = styled.p`
   font-size: 14px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
 `;
 
 export default function Gift() {
@@ -66,10 +66,7 @@ export default function Gift() {
   const handleShow = () => setShow(true);
 
   return (
-    <Container
-      $backgroundColor={colors.brightYellow1}
-      $padding="40px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary700} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconGift.src} alt="Icono Regalo" />
         <Text>{data.gift.message}</Text>

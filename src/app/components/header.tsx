@@ -1,9 +1,8 @@
 import localFont from "next/font/local";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import background from "../../../public/img/bg.png";
-import logo from "../../../public/img/logo-without-bg.png";
-import decoration from "../../../public/img/bg-decoration-wobg.png";
+import bgDesk from "../../../public/img/bg2.png";
+import bgMobile from "../../../public/img/bgMobile.png";
 
 import { desktop, mobile, tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
@@ -20,94 +19,24 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url(${background.src});
+  background-image: url(${bgMobile.src});
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-`;
-
-const Logo = styled.img`
-  width: 300px;
-  height: auto;
-  margin: 0 auto;
-
-  @media (${mobile}) {
-    width: 350px;
-  }
-
-  @media (${tablet}) {
-    width: 400px;
-  }
-`;
-
-const Decoration = styled.div<{
-  $site: string;
-}>`
-  position: absolute;
-  background-image: url(${decoration.src});
-  width: 150px;
-  height: 322px;
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  @media (${mobile}) {
-    width: 150px;
-    height: 322px;
-  }
-
-  @media (${tablet}) {
-    width: 180px;
-    height: 342px;
-  }
 
   @media (${desktop}) {
-    width: 250px;
-    height: 422px;
+    background-image: url(${bgDesk.src});
   }
-
-  ${(props) =>
-    props.$site == "left" &&
-    css`
-      top: -170px;
-      left: -90px;
-      transform: rotate(140deg);
-
-      @media (${mobile}) {
-        top: -150px;
-      }
-
-      @media (${tablet}) {
-        top: -90px;
-        left: -90px;
-      }
-    `}
-
-  ${(props) =>
-    props.$site == "right" &&
-    css`
-      bottom: -160px;
-      right: -90px;
-      transform: rotate(-45deg);
-
-      @media (${mobile}) {
-        bottom: -160px;
-        right: -90px;
-      }
-
-      @media (${tablet}) {
-        bottom: -90px;
-        right: -90px;
-      }
-    `}
 `;
 
 const Title = styled.h2`
   font-family: ${eyesomeScriptFont.style.fontFamily};
   font-weight: normal;
   text-align: center;
-  color: ${colors.darkerYellow};
-  font-size: 34px;
+  color: ${colors.primary600};
+  font-size: 46px;
 
   &:first-of-type {
     margin-top: 20px;
@@ -117,12 +46,38 @@ const Title = styled.h2`
   }
 
   @media (${mobile}) {
-    font-size: 46px;
+    font-size: 52px;
   }
 
   @media (${tablet}) {
-    font-size: 64px;
+    font-size: 72px;
   }
+`;
+
+const OverlappingContainer = styled.div`
+  position: relative;
+  display: block;
+  margin: 0 auto;
+`;
+
+const CenteredText = styled.span`
+  text-align: center;
+  font-size: 300px;
+  color: ${colors.secondary600};
+  font-weight: 900;
+  opacity: 0.7;
+  line-height: 1;
+`;
+
+const OverlapText = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 150px;
+  font-family: ${eyesomeScriptFont.style.fontFamily};
+  color: ${colors.primary600};
 `;
 
 const ScrollDownArrow = styled.button`
@@ -137,8 +92,8 @@ const ScrollDownArrow = styled.button`
   text-shadow: 0;
   width: 20px;
   height: 20px;
-  border-bottom: 2px solid ${colors.yellow1};
-  border-right: 2px solid ${colors.yellow1};
+  border-bottom: 2px solid ${colors.secondary700};
+  border-right: 2px solid ${colors.secondary700};
   z-index: 9;
   left: 50%;
   -webkit-transform: translate(-50%, 0%) rotate(45deg);
@@ -156,11 +111,15 @@ const ScrollDownArrow = styled.button`
 export default function Header({ onScroll }: { onScroll: () => any }) {
   return (
     <Container>
-      <Decoration $site="left" />
-      <Title>Matrimonio</Title>
-      <Logo src={logo.src} alt="logo" />
-      <Title>{data.names}</Title>
-      <Decoration $site="right" />
+      {data.headerTitle && <Title>{data.headerTitle}</Title>}
+
+      {data.headerCenteredText && (
+        <OverlappingContainer>
+          <CenteredText>{data.headerCenteredText.text}</CenteredText>
+          <OverlapText>{data.headerCenteredText.subText}</OverlapText>
+        </OverlappingContainer>
+      )}
+      {data.headerSubtitle && <Title>{data.headerSubtitle}</Title>}
       <ScrollDownArrow onClick={onScroll} />
     </Container>
   );

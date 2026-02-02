@@ -35,7 +35,7 @@ const Text = styled.p`
   font-family: ${eyesomeScriptFont.style.fontFamily};
   font-size: 24px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
 
   @media (${tablet}) {
     font-size: 32px;
@@ -44,10 +44,7 @@ const Text = styled.p`
 
 export default function Thanks() {
   return (
-    <Container
-      $backgroundColor={colors.brightYellow7}
-      $padding="40px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary300} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconHeart.src} alt="Icono corazón" />
         <Text>¡Gracias por acompañarnos en este momento tan importante!</Text>

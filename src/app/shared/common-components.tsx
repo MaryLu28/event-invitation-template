@@ -4,7 +4,7 @@ import { colors } from "./colors";
 export const Title = styled.h4`
   font-size: 28px;
   margin-bottom: 16px;
-  color: ${colors.yellow1};
+  color: ${colors.secondary700};
   text-align: center;
   font-weight: 400;
 `;
@@ -25,8 +25,8 @@ export const Container = styled.section<{
 const buttonStyle = css`
   font-size: 16px;
   padding: 10px;
-  color: ${colors.brightYellow8};
-  background-color: ${colors.yellow1};
+  color: ${colors.tertiary200};
+  background-color: ${colors.secondary700};
   margin: 20px auto 0;
   text-align: center;
   min-width: 120px;

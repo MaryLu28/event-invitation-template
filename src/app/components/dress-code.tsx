@@ -33,7 +33,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 20px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   margin-bottom: 20px;
 `;
 
@@ -41,7 +41,7 @@ const Tips = styled.p`
   font-size: 14px;
   margin-bottom: 6px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
 `;
 
 const ModalContainer = styled.div`
@@ -101,7 +101,7 @@ const ModalText = styled.p`
   font-size: 12px;
   margin-bottom: 10px;
   text-align: center;
-  color: ${colors.yellow1};
+  color: ${colors.secondary700};
   font-weight: 500;
 
   @media (${mobile}) {
@@ -121,10 +121,7 @@ export default function DressCode() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Container
-      $backgroundColor={colors.brightYellow1}
-      $padding="40px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary700} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconDressCode.src} alt="Icono Dress Code" />
         <Title>Código de Vestimenta</Title>

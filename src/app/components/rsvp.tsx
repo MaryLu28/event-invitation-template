@@ -24,16 +24,13 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 18px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   margin-bottom: 20px;
 `;
 
 export default function RSVP() {
   return (
-    <Container
-      $backgroundColor={colors.brightYellow8}
-      $padding="80px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary200} $padding="80px 20px 60px">
       <Content>
         <Title>RSVP</Title>
         <Text>

@@ -22,7 +22,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 18px;
   text-align: center;
-  color: ${colors.darkerYellow};
+  color: ${colors.primary600};
   margin-bottom: 20px;
 `;
 
@@ -38,10 +38,7 @@ const PlaylistBtn = styled(ButtonLink)`
 
 export default function Music() {
   return (
-    <Container
-      $backgroundColor={colors.brightYellow7}
-      $padding="40px 20px 60px"
-    >
+    <Container $backgroundColor={colors.tertiary300} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconMusic.src} alt="Icono calendario" />
         <Title>¿Qué canciones no pueden faltar?</Title>
