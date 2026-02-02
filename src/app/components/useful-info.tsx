@@ -81,10 +81,9 @@ export default function UsefulInfo() {
   return (
     <Container $backgroundColor={colors.tertiary200}>
       <Content>
-        <Title>Información Útil</Title>
+        <Title>{data.usefulInfo.title}</Title>
         <Text>
-          Te dejamos sugerencias zonas para hospedarte y algunas sugerencias
-          para que aproveches este viaje al máximo.
+          <Markdown>{data.usefulInfo.description}</Markdown>
         </Text>
         <Button onClick={handleShow}>Ver detalles</Button>
         <Modal
@@ -97,7 +96,7 @@ export default function UsefulInfo() {
           }}
         >
           <ModalContent>
-            {data.usefulInfo.map((info, index) => (
+            {data.usefulInfo.details.map((info, index) => (
               <InfoBox key={index}>
                 <InfoTitle>{info.title}</InfoTitle>
                 <InfoList>
@@ -107,7 +106,7 @@ export default function UsefulInfo() {
 
                       {item.link && (
                         <InfoLink href={item.link} target="_blank">
-                          mas información
+                          {item.linkText ? item.linkText : "más información"}
                         </InfoLink>
                       )}
                     </InfoItem>
