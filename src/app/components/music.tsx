@@ -22,7 +22,7 @@ const Icon = styled.img`
 const Text = styled.p`
   font-size: 18px;
   text-align: center;
-  color: ${colors.primary600};
+  color: ${colors.secondary100};
   margin-bottom: 20px;
 `;
 
@@ -38,18 +38,32 @@ const PlaylistBtn = styled(ButtonLink)`
 
 export default function Music() {
   return (
-    <Container $backgroundColor={colors.tertiary300} $padding="40px 20px 60px">
+    <Container $backgroundColor={colors.secondary600} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconMusic.src} alt="Icono calendario" />
-        <Title>¿Qué canciones no pueden faltar?</Title>
+        <Title color={colors.secondary200}>
+          ¿Qué canciones no pueden faltar?
+        </Title>
         <Text>¡Queremos crear una lista inolvidable!</Text>
         <ButtonsGroup>
-          <PlaylistBtn href={data.music.youtube} target="_blank">
-            Youtube
-          </PlaylistBtn>
-          <PlaylistBtn href={data.music.spotify} target="_blank">
-            Spotify
-          </PlaylistBtn>
+          {data.music.youtube && (
+            <PlaylistBtn
+              href={data.music.youtube}
+              target="_blank"
+              theme="secondaryDark"
+            >
+              Youtube
+            </PlaylistBtn>
+          )}
+          {data.music.spotify && (
+            <PlaylistBtn
+              href={data.music.spotify}
+              target="_blank"
+              theme="secondaryDark"
+            >
+              Spotify
+            </PlaylistBtn>
+          )}
         </ButtonsGroup>
       </Content>
     </Container>
