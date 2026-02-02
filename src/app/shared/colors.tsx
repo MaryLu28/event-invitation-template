@@ -1,5 +1,3 @@
-import { ColorFormat } from "react-countdown-circle-timer";
-
 export const colors = {
   primary700: "#0a111d",
   primary600: "#1B263B",

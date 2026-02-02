@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import { colors } from "../shared/colors";
-import { ButtonLink, Container, Title } from "../shared/common-components";
+import {
+  ButtonLink,
+  Container,
+  FormattedText,
+  Title,
+} from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
-
-import churchIcon from "../../../public/img/icono-ceremonia.svg";
-import partyIcon from "../../../public/img/icono-fiesta.svg";
 
 import data from "../data.json";
 
@@ -24,6 +26,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: ${colors.secondary600};
 
   @media (${tablet}) {
     width: 50%;
@@ -31,8 +34,7 @@ const Info = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 240px;
-  margin-bottom: -40px;
+  width: 200px;
 `;
 
 const DateInfo = styled.div`
@@ -42,7 +44,7 @@ const DateInfo = styled.div`
 const DateText = styled.p`
   font-size: 18px;
   text-align: center;
-  color: ${colors.primary600};
+
   font-weight: 500;
 `;
 
@@ -50,59 +52,37 @@ const Text = styled.p`
   font-size: 16px;
   margin-bottom: 6px;
   text-align: center;
-  color: ${colors.primary600};
 `;
 
 export default function CeremonyAndParty() {
-  const ceremonyDate = new Date(data.ceremony.date);
-  const ceremonyDateStr = ceremonyDate.toLocaleDateString("es-VE", {
-    dateStyle: "long",
-  });
-  const ceremonyTimeStr = ceremonyDate.toLocaleTimeString("es-VE", {
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "America/Argentina/Buenos_Aires",
-  });
-
-  const partyDate = new Date(data.party.date);
-  const partyDateStr = partyDate.toLocaleDateString("es-VE", {
-    dateStyle: "long",
-  });
-  const partyTimeStr = partyDate.toLocaleTimeString("es-VE", {
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "America/Argentina/Buenos_Aires",
-  });
-
   return (
-    <Container $backgroundColor={colors.tertiary200} $padding="20px 20px 60px">
+    <Container $backgroundColor={colors.secondary100} $padding="20px 20px 60px">
       <Content>
-        <Info>
-          <Icon src={churchIcon.src} alt="icono iglesia" />
-          <Title>Ceremonia</Title>
-          <DateInfo>
-            <DateText>{ceremonyDateStr}</DateText>
-            <DateText>{ceremonyTimeStr}</DateText>
-          </DateInfo>
-          <Text>{data.ceremony.church}</Text>
-          <Text>{data.ceremony.address}</Text>
-          <ButtonLink href={data.ceremony.mapsLink} target="_blank">
-            Cómo llegar
-          </ButtonLink>
-        </Info>
-        <Info>
-          <Icon src={partyIcon.src} alt="icono fiesta" />
-          <Title>Fiesta</Title>
-          <DateInfo>
-            <DateText>{partyDateStr}</DateText>
-            <DateText>{partyTimeStr}</DateText>
-          </DateInfo>
-          <Text>{data.party.venue}</Text>
-          <Text>{data.party.address}</Text>
-          <ButtonLink href={data.party.mapsLink} target="_blank">
-            Cómo llegar
-          </ButtonLink>
-        </Info>
+        {data.events.map((event) => (
+          <Info key={event.title}>
+            <Icon src={`img/${event.icon}`} alt={`icono ${event.title}`} />
+            {event.title && (
+              <Title color={colors.secondary600}>{event.title}</Title>
+            )}
+            <DateInfo>
+              <DateText>{event.dateStr}</DateText>
+              <DateText>{event.timeStr}</DateText>
+            </DateInfo>
+            {event.description && (
+              <Text style={{ marginBottom: 14 }}>
+                <FormattedText text={event.description} />
+              </Text>
+            )}
+            <Text>{event.address}</Text>
+            <ButtonLink
+              href={event.mapsLink}
+              target="_blank"
+              theme="secondaryLight"
+            >
+              Cómo llegar
+            </ButtonLink>
+          </Info>
+        ))}
       </Content>
     </Container>
   );
