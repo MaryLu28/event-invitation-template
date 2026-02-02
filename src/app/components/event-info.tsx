@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
 import { colors } from "../shared/colors";
-import {
-  ButtonLink,
-  Container,
-  FormattedText,
-  Title,
-} from "../shared/common-components";
+import { ButtonLink, Container, Title } from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
 
 import data from "../data.json";
+import Markdown from "markdown-to-jsx";
 
 const Content = styled.div`
   display: flex;
@@ -70,7 +66,7 @@ export default function EventInfo() {
             </DateInfo>
             {event.description && (
               <Text style={{ marginBottom: 14 }}>
-                <FormattedText text={event.description} />
+                <Markdown>{event.description}</Markdown>
               </Text>
             )}
             <Text>{event.address}</Text>

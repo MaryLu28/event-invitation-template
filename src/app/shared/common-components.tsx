@@ -23,34 +23,6 @@ export const Container = styled.section<{
   padding: ${(props) => props.$padding ?? "60px 20px"};
 `;
 
-export const FormattedText: React.FC<{
-  text: string;
-  className?: string;
-}> = ({ text, className }) => {
-  if (!text) return null;
-  const parts: React.ReactNode[] = [];
-  const regex = /\*\*(.+?)\*\*/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let i = 0;
-  while ((match = regex.exec(text)) !== null) {
-    const full = match[0];
-    const inner = match[1];
-    const start = match.index;
-    if (start > lastIndex) {
-      parts.push(<span key={`t-${i}`}>{text.slice(lastIndex, start)}</span>);
-      i++;
-    }
-    parts.push(<strong key={`b-${i}`}>{inner}</strong>);
-    i++;
-    lastIndex = start + full.length;
-  }
-  if (lastIndex < text.length) {
-    parts.push(<span key={`t-${i}`}>{text.slice(lastIndex)}</span>);
-  }
-  return <span className={className}>{parts}</span>;
-};
-
 const buttonStyle = css`
   font-size: 16px;
   padding: 10px;

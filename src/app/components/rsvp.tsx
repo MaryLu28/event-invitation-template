@@ -6,6 +6,7 @@ import { colors } from "../shared/colors";
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import data from "../data.json";
+import Markdown from "markdown-to-jsx";
 
 const Content = styled.div`
   display: flex;
@@ -37,17 +38,13 @@ export default function RSVP() {
     <Container $backgroundColor={colors.primary200} $padding="80px 20px 60px">
       <Content>
         <Title>RSVP</Title>
-        <Text
-          dangerouslySetInnerHTML={{
-            __html: data.rsvp.message.replace(/\n/g, "<br />"),
-          }}
-        />
+        <Text>
+          <Markdown>{data.rsvp.message}</Markdown>
+        </Text>
         {data.rsvp.note && (
-          <SmallText
-            dangerouslySetInnerHTML={{
-              __html: data.rsvp.note.replace(/\n/g, "<br />"),
-            }}
-          />
+          <SmallText>
+            <Markdown>{data.rsvp.note}</Markdown>
+          </SmallText>
         )}
         <ButtonLink href={data.rsvp.link} target="_blank">
           Confirmar asistencia
