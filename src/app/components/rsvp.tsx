@@ -28,21 +28,33 @@ const Text = styled.p`
   margin-bottom: 20px;
 `;
 
+const SmallText = styled(Text)`
+  font-size: 14px;
+`;
+
 export default function RSVP() {
   return (
-    <Container $backgroundColor={colors.tertiary200} $padding="80px 20px 60px">
+    <Container $backgroundColor={colors.primary200} $padding="80px 20px 60px">
       <Content>
         <Title>RSVP</Title>
-        <Text>
-          Esperamos que seas parte de esta gran celebración. <br /> ¡Confírmanos
-          tu asistencia!
-        </Text>
-        <ButtonLink href={data.rsvpLink} target="_blank">
+        <Text
+          dangerouslySetInnerHTML={{
+            __html: data.rsvp.message.replace(/\n/g, "<br />"),
+          }}
+        />
+        {data.rsvp.note && (
+          <SmallText
+            dangerouslySetInnerHTML={{
+              __html: data.rsvp.note.replace(/\n/g, "<br />"),
+            }}
+          />
+        )}
+        <ButtonLink href={data.rsvp.link} target="_blank">
           Confirmar asistencia
         </ButtonLink>
         <Icon src={iconCalendar.src} alt="Icono calendario" />
         <Text>¡Agenda la fecha en tu calendario!</Text>
-        <ButtonLink href={data.calendarLink} target="_blank">
+        <ButtonLink href={data.rsvp.calendarLink} target="_blank">
           Agendar evento
         </ButtonLink>
       </Content>

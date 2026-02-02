@@ -23,17 +23,6 @@ export const Container = styled.section<{
   padding: ${(props) => props.$padding ?? "60px 20px"};
 `;
 
-const buttonStyle = css`
-  font-size: 16px;
-  padding: 10px;
-  color: ${colors.secondary100};
-  background-color: ${colors.secondary700};
-  margin: 20px auto 0;
-  text-align: center;
-  min-width: 120px;
-  z-index: 1;
-`;
-
 export const FormattedText: React.FC<{
   text: string;
   className?: string;
@@ -62,9 +51,19 @@ export const FormattedText: React.FC<{
   return <span className={className}>{parts}</span>;
 };
 
+const buttonStyle = css`
+  font-size: 16px;
+  padding: 10px;
+  color: ${colors.primary100};
+  background-color: ${colors.primary700};
+  margin: 20px auto 0;
+  text-align: center;
+  min-width: 120px;
+  z-index: 1;
+`;
+
 export const ButtonLink = styled.a<{
   $theme?:
-    | "primaryLight"
     | "primaryDark"
     | "secondaryLight"
     | "secondaryDark"
@@ -72,10 +71,6 @@ export const ButtonLink = styled.a<{
     | "tertiaryDark";
 }>`
   ${buttonStyle}
-  ${(props) =>
-    props.theme === "primaryLight" &&
-    `color: ${colors.primary100};
-    background-color: ${colors.primary700};`}
   ${(props) =>
     props.theme === "primaryDark" &&
     `color: ${colors.primary700};
@@ -100,7 +95,6 @@ export const ButtonLink = styled.a<{
 
 export const Button = styled.button<{
   $theme?:
-    | "primaryLight"
     | "primaryDark"
     | "secondaryLight"
     | "secondaryDark"
@@ -108,10 +102,6 @@ export const Button = styled.button<{
     | "tertiaryDark";
 }>`
   ${buttonStyle}
-  ${(props) =>
-    props.theme === "primaryLight" &&
-    `color: ${colors.primary100};
-    background-color: ${colors.primary700};`}
   ${(props) =>
     props.theme === "primaryDark" &&
     `color: ${colors.primary700};
