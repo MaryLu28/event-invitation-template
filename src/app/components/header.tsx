@@ -15,7 +15,7 @@ const eyesomeScriptFont = localFont({
 
 const Container = styled.section`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;

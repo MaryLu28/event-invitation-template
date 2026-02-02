@@ -14,7 +14,7 @@ import Thanks from "./components/thanks";
 import UsefulInfo from "./components/useful-info";
 
 const MainContainer = styled.main`
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100vw;
   background-color: #f2f2f1;
   display: flex;
