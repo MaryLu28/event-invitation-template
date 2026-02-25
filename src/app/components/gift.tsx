@@ -11,7 +11,7 @@ import iconGift from "../../../public/img/icono-regalo.svg";
 
 import dataJson from "../data.json";
 
-const data = dataJson as Data;
+const gift = dataJson.gift as Gift;
 
 const Content = styled.div`
   display: flex;
@@ -72,7 +72,7 @@ export default function Gift() {
     <Container $backgroundColor={colors.tertiary100} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconGift.src} alt="Icono Regalo" />
-        <Text>{data.gift.message}</Text>
+        <Text>{gift.message}</Text>
         <Button onClick={handleShow} theme="tertiaryLight">
           Ver detalles
         </Button>
@@ -86,7 +86,7 @@ export default function Gift() {
           }}
         >
           <ModalContent>
-            {data.gift.bankInfo.map((bank, index) => (
+            {gift.bankInfo.map((bank, index) => (
               <BankInfo key={index}>
                 <BankTitle>{bank.bank}</BankTitle>
                 {bank.name && <BankText>{bank.name}</BankText>}

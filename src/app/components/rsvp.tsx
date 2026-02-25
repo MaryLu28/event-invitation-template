@@ -8,7 +8,7 @@ import iconCalendar from "../../../public/img/icono-calendario.svg";
 
 import dataJson from "../data.json";
 
-const data = dataJson as Data;
+const rsvp = dataJson.rsvp as RSVP;
 
 const Content = styled.div`
   display: flex;
@@ -41,19 +41,19 @@ export default function RSVP() {
       <Content>
         <Title>RSVP</Title>
         <Text>
-          <Markdown>{data.rsvp.message}</Markdown>
+          <Markdown>{rsvp.message}</Markdown>
         </Text>
-        {data.rsvp.note && (
+        {rsvp.note && (
           <SmallText>
-            <Markdown>{data.rsvp.note}</Markdown>
+            <Markdown>{rsvp.note}</Markdown>
           </SmallText>
         )}
-        <ButtonLink href={data.rsvp.link} target="_blank">
+        <ButtonLink href={rsvp.link} target="_blank">
           Confirmar asistencia
         </ButtonLink>
         <Icon src={iconCalendar.src} alt="Icono calendario" />
         <Text>¡Agenda la fecha en tu calendario!</Text>
-        <ButtonLink href={data.rsvp.calendarLink} target="_blank">
+        <ButtonLink href={rsvp.calendarLink} target="_blank">
           Agendar evento
         </ButtonLink>
       </Content>

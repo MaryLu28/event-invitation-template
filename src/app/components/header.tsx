@@ -9,7 +9,7 @@ import { colors } from "../shared/colors";
 
 import dataJson from "../data.json";
 
-const data = dataJson.header as Header;
+const header = dataJson.header as Header;
 
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",
@@ -137,15 +137,15 @@ const ScrollDownArrow = styled.button`
 export default function Header({ onScroll }: { onScroll: () => any }) {
   return (
     <Container>
-      {data.title && <Title>{data.title}</Title>}
+      {header.title && <Title>{header.title}</Title>}
 
-      {data.centeredText && (
+      {header.centeredText && (
         <OverlappingContainer>
-          <CenteredText>{data.centeredText.text}</CenteredText>
-          <OverlapText>{data.centeredText.subText}</OverlapText>
+          <CenteredText>{header.centeredText.text}</CenteredText>
+          <OverlapText>{header.centeredText.subText}</OverlapText>
         </OverlappingContainer>
       )}
-      {data.subtitle && <Title>{data.subtitle}</Title>}
+      {header.subtitle && <Title>{header.subtitle}</Title>}
       <ScrollDownArrow onClick={onScroll} />
     </Container>
   );

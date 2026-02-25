@@ -10,7 +10,7 @@ import { Button, Container, Title } from "../shared/common-components";
 import dataJson from "../data.json";
 import { tablet } from "../shared/breakpoints";
 
-const data = dataJson as Data;
+const usefulInfo = dataJson.usefulInfo as UsefulInfo;
 
 const Content = styled.div`
   display: flex;
@@ -83,9 +83,9 @@ export default function UsefulInfo() {
   return (
     <Container $backgroundColor={colors.primary200}>
       <Content>
-        <Title>{data.usefulInfo.title}</Title>
+        <Title>{usefulInfo.title}</Title>
         <Text>
-          <Markdown>{data.usefulInfo.description}</Markdown>
+          <Markdown>{usefulInfo.description}</Markdown>
         </Text>
         <Button onClick={handleShow}>Ver detalles</Button>
         <Modal
@@ -98,7 +98,7 @@ export default function UsefulInfo() {
           }}
         >
           <ModalContent>
-            {data.usefulInfo.details.map((info, index) => (
+            {usefulInfo.details.map((info, index) => (
               <InfoBox key={index}>
                 <InfoTitle>{info.title}</InfoTitle>
                 <InfoList>

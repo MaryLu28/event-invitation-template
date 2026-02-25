@@ -7,7 +7,7 @@ import { tablet } from "../shared/breakpoints";
 
 import dataJson from "../data.json";
 
-const data = dataJson as Data;
+const events = dataJson.events as Event[];
 
 const Content = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export default function EventInfo() {
   return (
     <Container $backgroundColor={colors.secondary100} $padding="20px 20px 60px">
       <Content>
-        {data.events.map((event) => (
+        {events.map((event) => (
           <Info key={event.title}>
             <Icon src={`img/${event.icon}`} alt={`icono ${event.title}`} />
             {event.title && (

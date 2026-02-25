@@ -10,7 +10,7 @@ import iconHeart from "../../../public/img/heart-icon.svg";
 import dataJson from "../data.json";
 import Markdown from "markdown-to-jsx";
 
-const data = dataJson as Data;
+const text = dataJson.footerText as string;
 
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",
@@ -53,7 +53,7 @@ export default function Thanks() {
       <Content>
         <Icon src={iconHeart.src} alt="Icono corazón" />
         <Text>
-          <Markdown>{data.footerText}</Markdown>
+          <Markdown>{text}</Markdown>
         </Text>
       </Content>
     </Container>

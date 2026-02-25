@@ -15,7 +15,7 @@ import heartIcon from "../../../public/img/heart-icon.svg";
 
 import dataJson from "../data.json";
 
-const data = dataJson as Data;
+const countdown = dataJson.countdown as Countdown;
 
 const Content = styled.div`
   display: flex;
@@ -120,7 +120,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
   }, [isMobileXl, isDesktop]);
 
   // use UNIX timestamp in seconds
-  const endTime = Math.floor(new Date(data.countdown.date).getTime() / 1000);
+  const endTime = Math.floor(new Date(countdown.date).getTime() / 1000);
 
   const remainingTime = endTime - startTime;
 
@@ -189,7 +189,7 @@ export default forwardRef<HTMLElement>(function Countdown(props, ref) {
         </CountdownCircleTimer>
       </Content>
       <Icon src={heartIcon.src} alt="icono corazón" />
-      {data.countdown.text && <Text>{data.countdown.text}</Text>}
+      {countdown.text && <Text>{countdown.text}</Text>}
     </Container>
   );
 });

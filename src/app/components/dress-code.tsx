@@ -17,7 +17,7 @@ import imageBg from "../../../public/img/dress-code.png";
 
 import dataJson from "../data.json";
 
-const data = dataJson as Data;
+const dressCode = dataJson.dressCode as DressCode;
 
 const Content = styled.div`
   display: flex;
@@ -127,10 +127,10 @@ export default function DressCode() {
       <Content>
         <Icon src={iconDressCode.src} alt="Icono Dress Code" />
         <Title color={colors.tertiary200}>Código de Vestimenta</Title>
-        <Text>{data.dressCode.description}</Text>
-        {data.dressCode.tips && (
+        <Text>{dressCode.description}</Text>
+        {dressCode.tips && (
           <>
-            {data.dressCode.tips.map((tip, index) => (
+            {dressCode.tips.map((tip, index) => (
               <Tips key={index}>{tip}</Tips>
             ))}
           </>
@@ -148,28 +148,26 @@ export default function DressCode() {
           }}
         >
           <ModalContainer>
-            <Title>
-              {data.dressCode.modalTitle ?? data.dressCode.description}
-            </Title>
+            <Title>{dressCode.modalTitle ?? dressCode.description}</Title>
             <ModalWrapper>
               <ModalContent>
                 <ModalColumn>
-                  {data.dressCode.menDetails.map((detail, index) => (
+                  {dressCode.menDetails.map((detail, index) => (
                     <ModalText key={index}>{detail}</ModalText>
                   ))}
                 </ModalColumn>
                 <ModalColumn>
-                  {data.dressCode.womenDetails.map((detail, index) => (
+                  {dressCode.womenDetails.map((detail, index) => (
                     <ModalText key={index}>{detail}</ModalText>
                   ))}
                 </ModalColumn>
               </ModalContent>
             </ModalWrapper>
-            {data.dressCode.ModalFooterNote && (
-              <ModalText>{data.dressCode.ModalFooterNote}</ModalText>
+            {dressCode.ModalFooterNote && (
+              <ModalText>{dressCode.ModalFooterNote}</ModalText>
             )}
-            {data.dressCode.examplesLink && (
-              <ButtonLink target="_blank" href={data.dressCode.examplesLink}>
+            {dressCode.examplesLink && (
+              <ButtonLink target="_blank" href={dressCode.examplesLink}>
                 Ver ejemplos
               </ButtonLink>
             )}
