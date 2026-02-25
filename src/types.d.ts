@@ -3,6 +3,12 @@ interface HeaderCenteredText {
   subText: string;
 }
 
+interface Header {
+  title?: string;
+  subtitle?: string;
+  centeredText?: HeaderCenteredText;
+}
+
 interface Countdown {
   date: string;
   text?: string;
@@ -78,9 +84,7 @@ interface UsefulInfo {
 interface Data {
   pageTitle: string;
   pageDescription: string;
-  headerTitle?: string;
-  headerSubtitle?: string;
-  headerCenteredText?: HeaderCenteredText;
+  header: Header;
   countdown: Countdown;
   events: Event[];
   dressCode: DressCode;
