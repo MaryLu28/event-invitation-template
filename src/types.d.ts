@@ -4,7 +4,6 @@ interface HeaderCenteredText {
 }
 
 interface Countdown {
-  enabled?: boolean;
   date: string;
   text?: string;
 }
