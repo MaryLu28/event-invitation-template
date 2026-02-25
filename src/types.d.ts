@@ -35,7 +35,7 @@ interface DressCode {
   examplesLink?: string;
 }
 
-interface Rsvp {
+interface RSVP {
   message: string;
   note?: string;
   link: string;
@@ -88,7 +88,7 @@ interface Data {
   countdown: Countdown;
   events: Event[];
   dressCode: DressCode;
-  rsvp: Rsvp;
+  rsvp: RSVP;
   music: Music;
   gift: Gift;
   usefulInfo: UsefulInfo;
