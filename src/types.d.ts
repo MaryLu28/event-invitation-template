@@ -9,10 +9,10 @@ interface Countdown {
 }
 
 interface Event {
-  dateStr: string;
-  timeStr: string;
   icon: string;
   title?: string;
+  dateStr: string;
+  timeStr: string;
   description?: string;
   address: string;
   mapsLink: string;
