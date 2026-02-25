@@ -1,0 +1,114 @@
+{
+  "pageTitle": "Boda de Sofía y Carlos",
+  "pageDescription": "Te invitamos a compartir el día más importante de nuestras vidas en el Jardín de las Rosas.",
+  "header": {
+    "title": "¡Nuestra Boda!",
+    "subtitle": "Sofía & Carlos",
+    "centeredText": {
+      "text": "SC",
+      "subText": "&"
+    }
+  },
+  "countdown": {
+    "date": "2026-12-20T17:00:00",
+    "text": "¡Faltan pocos días para celebrar nuestro amor con todos ustedes!"
+  },
+  "events": [
+    {
+      "icon": "icono-ceremonia.svg",
+      "title": "Ceremonia Religiosa",
+      "dateStr": "Sábado, 20 de Diciembre",
+      "timeStr": "17:00 hrs",
+      "description": "Parroquia de Santa María",
+      "address": "Calle Principal #456, Centro Histórico",
+      "mapsLink": "https://maps.google.com/?q=Parroquia+Santa+Maria"
+    },
+    {
+      "icon": "icono-fiesta-2.svg",
+      "title": "Recepción y Fiesta",
+      "dateStr": "Sábado, 20 de Diciembre",
+      "timeStr": "19:00 hrs",
+      "description": "Jardín de las Rosas",
+      "address": "Av. del Acueducto #101, Zona Sur",
+      "mapsLink": "https://maps.google.com/?q=Jardin+de+las+Rosas"
+    }
+  ],
+  "dressCode": {
+    "description": "Gala (Riguroso)",
+    "modalTitle": "Código de Vestimenta",
+    "tips": ["Evitar color blanco y marfil", "Uso de traje largo para damas"],
+    "menDetails": [
+      "Traje oscuro o Esmoquin",
+      "Corbata o Pajarita",
+      "Zapatos de vestir"
+    ],
+    "womenDetails": [
+      "Vestido largo de noche",
+      "Colores festivos",
+      "Evitar tacones de aguja muy finos para el jardín"
+    ],
+    "ModalFooterNote": "¡Gracias por ayudarnos a lucir increíbles!",
+    "examplesLink": "https://pin.it/ejemplo-vestimenta"
+  },
+  "rsvp": {
+    "message": "Favor de confirmar tu asistencia antes del 1 de Diciembre.",
+    "note": "Indícanos si tienes alguna restricción alimentaria.",
+    "link": "https://confirmacion.com/sofia-y-carlos",
+    "calendarLink": "https://calendar.google.com/event?action=TEMPLATE&text=Boda+Sofia+y+Carlos..."
+  },
+  "music": {
+    "title": "¡Ayúdanos a armar la playlist!",
+    "description": "Dinos qué canciones no pueden faltar en la pista de baile.",
+    "youtube": "https://youtube.com/playlist?list=boda-sofia-carlos",
+    "spotify": "https://open.spotify.com/playlist/7x..."
+  },
+  "gift": {
+    "message": "Tu presencia es nuestro mejor regalo, pero si deseas hacernos un detalle, te dejamos nuestra información bancaria.",
+    "bankInfo": [
+      {
+        "bank": "Banco Internacional",
+        "countNumber": "9876-5432-10",
+        "countType": "Cuenta de Ahorros",
+        "name": "Sofía Martínez",
+        "email": "sofia.m@email.com",
+        "SWIFT": "BINTMX"
+      },
+      {
+        "bank": "Global Bank",
+        "countNumber": "1122-3344-55",
+        "countType": "Cuenta Corriente",
+        "name": "Carlos Rodríguez",
+        "email": "carlos.r@email.com",
+        "id": "ID-882233"
+      }
+    ]
+  },
+  "usefulInfo": {
+    "title": "Información Importante",
+    "description": "Detalles adicionales para que disfrutes al máximo el evento.",
+    "details": [
+      {
+        "title": "Hospedaje Sugerido",
+        "list": [
+          {
+            "text": "Hotel Boutique Real",
+            "link": "https://hotelreal.com",
+            "linkText": "Reservar con descuento"
+          },
+          {
+            "text": "Hotel Express Centro"
+          }
+        ]
+      },
+      {
+        "title": "Transporte",
+        "list": [
+          {
+            "text": "Contaremos con transporte saliendo de la Parroquia hacia el Jardín."
+          }
+        ]
+      }
+    ]
+  },
+  "footerText": "¡Nos vemos pronto para celebrar! Con amor, Sofía y Carlos."
+}
