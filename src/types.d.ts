@@ -37,6 +37,8 @@ interface Rsvp {
 }
 
 interface Music {
+  title: string;
+  description: string;
   youtube?: string;
   spotify?: string;
 }

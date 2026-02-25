@@ -6,7 +6,7 @@ import iconMusic from "../../../public/img/icono-canciones.svg";
 import dataJson from "../data.json";
 import { ButtonLink, Container, Title } from "../shared/common-components";
 
-const data = dataJson as Data;
+const data = dataJson.music as Music;
 
 const Content = styled.div`
   display: flex;
@@ -43,23 +43,21 @@ export default function Music() {
     <Container $backgroundColor={colors.secondary600} $padding="40px 20px 60px">
       <Content>
         <Icon src={iconMusic.src} alt="Icono calendario" />
-        <Title color={colors.secondary200}>
-          ¿Qué canciones no pueden faltar?
-        </Title>
-        <Text>¡Queremos crear una lista inolvidable!</Text>
+        <Title color={colors.secondary200}>{data.title}</Title>
+        <Text>{data.description}</Text>
         <ButtonsGroup>
-          {data.music.youtube && (
+          {data.youtube && (
             <PlaylistBtn
-              href={data.music.youtube}
+              href={data.youtube}
               target="_blank"
               theme="secondaryDark"
             >
               Youtube
             </PlaylistBtn>
           )}
-          {data.music.spotify && (
+          {data.spotify && (
             <PlaylistBtn
-              href={data.music.spotify}
+              href={data.spotify}
               target="_blank"
               theme="secondaryDark"
             >
