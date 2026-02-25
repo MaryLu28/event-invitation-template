@@ -148,7 +148,9 @@ export default function DressCode() {
           }}
         >
           <ModalContainer>
-            <Title>Vestimenta formal, elegante</Title>
+            <Title>
+              {data.dressCode.modalTitle ?? data.dressCode.description}
+            </Title>
             <ModalWrapper>
               <ModalContent>
                 <ModalColumn>

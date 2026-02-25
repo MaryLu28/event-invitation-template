@@ -21,6 +21,7 @@ interface Event {
 
 interface DressCode {
   description: string;
+  modalTitle?: string;
   tips?: string[];
   menDetails: string[];
   womenDetails: string[];
