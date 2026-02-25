@@ -13,7 +13,9 @@ import { Container } from "../shared/common-components";
 
 import heartIcon from "../../../public/img/heart-icon.svg";
 
-import data from "../data.json";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

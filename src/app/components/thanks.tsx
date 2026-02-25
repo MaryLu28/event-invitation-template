@@ -7,8 +7,10 @@ import { desktop, tablet } from "../shared/breakpoints";
 
 import iconHeart from "../../../public/img/heart-icon.svg";
 
-import data from "../data.json";
+import dataJson from "../data.json";
 import Markdown from "markdown-to-jsx";
+
+const data = dataJson as Data;
 
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",

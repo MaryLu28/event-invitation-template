@@ -5,7 +5,9 @@ import { colors } from "../shared/colors";
 import { ButtonLink, Container, Title } from "../shared/common-components";
 import { tablet } from "../shared/breakpoints";
 
-import data from "../data.json";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

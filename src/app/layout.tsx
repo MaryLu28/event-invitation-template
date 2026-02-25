@@ -5,7 +5,9 @@ import StyledComponentsRegistry from "./registry";
 import "react-responsive-modal/styles.css";
 import "./globals.css";
 
-import data from "./data.json";
+import dataJson from "./data.json";
+
+const data = dataJson as Data;
 
 const merriweather = Merriweather({ weight: "400", subsets: ["cyrillic"] });
 

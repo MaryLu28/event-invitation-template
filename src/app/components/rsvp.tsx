@@ -6,7 +6,9 @@ import { colors } from "../shared/colors";
 
 import iconCalendar from "../../../public/img/icono-calendario.svg";
 
-import data from "../data.json";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

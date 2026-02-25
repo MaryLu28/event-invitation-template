@@ -7,7 +7,9 @@ import bgMobile from "../../../public/img/bgMobile.png";
 import { desktop, mobile, tablet } from "../shared/breakpoints";
 import { colors } from "../shared/colors";
 
-import data from "../data.json";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const eyesomeScriptFont = localFont({
   src: "../../../public/fonts/Eyesome/Eyesome Script.otf",

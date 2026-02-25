@@ -5,11 +5,13 @@ import styled from "styled-components";
 
 import { colors } from "../shared/colors";
 import { Button, Container, Title } from "../shared/common-components";
+import { tablet } from "../shared/breakpoints";
 
 import iconGift from "../../../public/img/icono-regalo.svg";
 
-import data from "../data.json";
-import { tablet } from "../shared/breakpoints";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

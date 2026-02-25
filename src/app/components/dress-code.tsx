@@ -15,7 +15,9 @@ import { mobile, tablet } from "../shared/breakpoints";
 import iconDressCode from "../../../public/img/icono-dresscode.svg";
 import imageBg from "../../../public/img/dress-code.png";
 
-import data from "../data.json";
+import dataJson from "../data.json";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

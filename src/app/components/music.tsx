@@ -3,8 +3,10 @@ import { colors } from "../shared/colors";
 
 import iconMusic from "../../../public/img/icono-canciones.svg";
 
-import data from "../data.json";
+import dataJson from "../data.json";
 import { ButtonLink, Container, Title } from "../shared/common-components";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;

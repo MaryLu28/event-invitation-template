@@ -7,8 +7,10 @@ import styled from "styled-components";
 import { colors } from "../shared/colors";
 import { Button, Container, Title } from "../shared/common-components";
 
-import data from "../data.json";
+import dataJson from "../data.json";
 import { tablet } from "../shared/breakpoints";
+
+const data = dataJson as Data;
 
 const Content = styled.div`
   display: flex;
